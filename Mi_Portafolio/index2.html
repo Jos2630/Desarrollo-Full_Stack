@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="css/styles2.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">Josue Chambilla</div>
+          <nav>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#acercade">Acerca de</a></li>
+              <li><a href="#servicios">Mis Proyectos</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- <h1>Bienvenido a mi sitio web</h1>   -->
+    </header>
+    <main>
+      <section id="inicio">
+        <div class="container person">
+          <div class="person-content">
+            <span class="person-bade">Disponible para proyectos</span>
+            <h1>Hola, soy Josue</h1>
+            <p>
+              Desarrollador de Software y Analista Programador Universitario
+            </p>
+            <div class="actions">
+                <a href="#contacto" class="btn btn-primary">Contáctame</a>
+                <a href="#servicios" class="btn btn-secondary">Ver proyectos</a>
+            </div>
+            <aside class="person-image">
+                <div class="float-card card--a">React</div>
+                <div class="float-card card--b">Nodejs</div>
+                <div class="float-card card--c">Python</div>
+                <div class="avatar">
+                    <div class="avatar-interior">JC</div>
+                </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section id="acercade">
+        <div class="container about">
+          <h2>Acerca de mí</h2>
+          <p>
+            Soy un apasionado desarrollador de software con experiencia en
+            diversas tecnologías y lenguajes de programación. Me especializo en
+            el desarrollo de aplicaciones web y móviles, y siempre estoy
+            buscando aprender nuevas habilidades para mejorar mis proyectos.
+          </p>
+          <div class="skill-grid">
+            <article class="skill-card skill--backend">
+               <h3>Backend</h3>
+               <ul>
+                    <li>Node js</li>
+                    <li>Php</li>
+                    <li>Pyhton</li>
+                    <li>java</li>
+               </ul>
+            </article>
+            <article class="skill-card skill--frontend">
+               <h3>Frontend</h3>
+               <ul>
+                    <li>javascript</li>
+                    <li>react</li>
+                    <li>angular</li>
+                    <li>vue</li>
+               </ul>
+            </article>
+            <article class="skill-card skill--database">
+               <h3>Base de datos</h3>
+               <ul>
+                    <li>mysql</li>
+                    <li>postesql</li>
+                    <li>Mongodb</li>
+               </ul>
+            </article>
+
+          </div>
+          <div class="leguajes">
+            <div class="item-l">Nodejs (nestjs, express)</div>
+            <div class="item-l">Php (laravel)</div>
+            <div class="item-l">Python (django)</div>
+            <div class="item-l">Java (spring)</div>
+            <div class="item-l">JavaScript/typescript (react, angular)</div>
+            <div class="item-l">Base de datos (mysql, postgresql, mongodb)</div>
+          </div>
+        </div>
+      </section>
+      <section id="servicios">
+        <div class="container">
+          <h2>Mis proyectos implementados</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-img">📱</div>
+              <div class="project-info">
+                <h3>App de Tareas</h3>
+                <p>
+                  Aplicación web con drag & drop, almacenamiento local y modo
+                  oscuro. UI minimalista con microinteracciones.
+                </p>
+                <div>
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">CSS Modules</span>
+                  <span class="tech-badge">Flexbox</span>
+                </div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-img">🌿</div>
+              <div class="project-info">
+                <h3>EcoShop</h3>
+                <p>
+                  E-commerce sostenible con sistema de filtros, carrito de
+                  compras y diseño responsive.
+                </p>
+                <div>
+                  <span class="tech-badge">HTML5 semántico</span>
+                  <span class="tech-badge">CSS Grid</span>
+                  <span class="tech-badge">JavaScript</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="contacto">
+           <div class="container contact">
+          <h2 class="section-title">Cantactenos</h2>
+          <div class="contacto-info">
+            <div class="contacto-item">
+              <span class="contacto-icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <p>tuemail@ejemplo.com</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📍</span>
+              <div>
+                <strong>Direccion</strong>
+                <p>Calle Bugambilla nro 303, Zona Obrajes, La Paz, Bolivia</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📞</span>
+              <div>
+                <strong>Respuesta</strong>
+                <p>Menos de 48 horas</p>
+              </div>
+            </div>
+
+          </div>
+        <div class="contact-form">
+            <form action="#" method="post">
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="tú@ejemplo.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="presupuesto">Presupuestos Estimado:</label>
+                <span class="rango-valor" id="rango-valor">$1,000 - $5,000</span>
+                <input
+                  type="range"
+                  id="presupuesto"
+                  name="presupuesto"
+                  min="1000"
+                  max="5000"
+                  step="500"
+                  value="3000"
+                />
+              </div>
+              <div class="form-group">
+                  <label for="servicio">Tipo de servicio</label>
+                  <input
+                    type="search"
+                    id="servicio"
+                    name="servicio"
+                    list="servicios-list"
+                    placeholder="Busca un servicio..."
+                  />
+                  <datalist id="servicios-list">
+                    <option value="Desarrollo Web Full Stack">
+                    <option value="API REST / Back-End">
+                    <option value="Diseño UI / Front-End">
+                    <option value="Base de Datos">
+                    <option value="Consultoría Técnica">
+                  </datalist>
+                </div>
+              <div class="form-group">
+                  <label for="mensaje">Mensaje</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  required
+                  placeholder="Cuéntame sobre tu proyecto..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Enviar mensaje →</button>
+            </form>
+            <p >* Recibirás respuesta en menos de 48h.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="https://github.com/hebertcussi" target="_blank">Github</a>
+          <a href="https://www.linkedin.com/in/hebertcussi" target="_blank">LinkedIn</a>
+          <a href="https://www.facebook.com/hebertcussi" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

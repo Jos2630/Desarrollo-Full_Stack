@@ -1,7 +1,5 @@
 :root{
-
-    
-     --bg-primary: rgb(10, 14, 23);
+    --bg-primary: rgb(10, 14, 23);
     --bg-secondary: rgb(17, 24, 39);
     --bg-tertiary: rgb(30, 41, 59);
     --text-primary: rgb(241, 245, 249);
@@ -11,8 +9,6 @@
     --border: rgb(51, 65, 85);
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
     --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-    
 }
 body{
     background-color: var(--bg-primary);
