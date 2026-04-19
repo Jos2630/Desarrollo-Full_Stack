@@ -2,33 +2,30 @@
 /* 1. VARIABLES CSS (tema claro/oscuro)         */
 /* ============================================ */
 :root {
-    --bg-primary: #f8fafc;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #70c0fd;
-    --text-primary: #5c5c5c;
-    --text-secondary: #2b3b51;
-    --accent: #6366f1;
-    --text-muted:    #9ca3af;
-  --accent-2:      #a855f7;
-  /* Transición estándar */
- 
-  /* Tipografía */
-  --font-body:     'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
-  /* Espaciados */
-  --section-py:    6rem;
-  --gap:           2rem;
-    --accent-hover: #4f46e5;
-    --acent-light: #6b6b6b;
-    --border: #f0e2e8;
-    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-primary: rgb(10, 14, 23);
+    --bg-secondary: rgb(17, 24, 39);
+    --bg-tertiary: rgb(30, 41, 59);
+    --text-primary: rgb(241, 245, 249);
+    --text-secondary: rgb(156, 163, 175);
+    --accent: rgb(56, 189, 248);
+    --accent-hover: rgb(2, 132, 199);
+    --border: rgb(51, 65, 85);
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Variables que mantienen su valor original */
+    --accent-light: #e0e7ff;
+    --text-muted: #9ca3af;
+    --accent-2: #a855f7;
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --section-py: 6rem;
+    --gap: 2rem;
 }
 
 /* ============================================ */
 /* 2. RESET Y ESTILOS GLOBALES (Box Model)      */
 /* ============================================ */
-* {
+*,*::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,19 +35,31 @@
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    transition: background-color 0.2s, color 0.2s;
+    font-family: var(--font-body);
+    line-height: 1.6;  
+    animation: pageFadeIn 0.6s ease both;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+/* ✅ KEYFRAMES: Entrada de página */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+img, svg { display: block; max-width: 100%; }
+ul { list-style: none; }
+a { color: inherit; }
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0px 24px;
+    padding: 0px 1.5rem;
+    width: 100%;
 }
 
 /* ============================================ */
@@ -92,6 +101,14 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    
+    -webkit-backdrop-filter: blur(12px);
+    animation: slideDown 0.5s ease both;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
 }
 
 nav ul {
@@ -149,7 +166,7 @@ nav ul li a:hover {
     align-items: center;
     gap: 4rem;
 }
- 
+
 .person-content {
     /* display: flex;
     flex-direction: column;
@@ -158,7 +175,33 @@ nav ul li a:hover {
     grid-area: content;
 }
 
+.person-img {
+    grid-area: visual;
+}
+
+.person-badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: .35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    /*Animacion*/
+    animation: fadeUp 0.6s 0.2s ease both;
+}
+
 .person h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);  /* ✅ clamp() – unidad relativa fluida */
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.2rem;
+  animation: fadeUp 0.6s 0.35s ease both;
+}
+
+.person h1 strong {
     font-size: 3rem;
     background: linear-gradient(135deg, var(--accent), #a855f7);
     color: transparent;
@@ -167,11 +210,18 @@ nav ul li a:hover {
 }
 
 .person p {
+    font-size: clamp(1rem, 2vw, 1.15rem);
     max-width: 480px;
     color: var(--text-secondary);
     margin-bottom: 2rem;
-    font-size: clamp(1rem, 2vw, 1.15rem);
     animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.actions {
+  display: flex;      /* Flexbox */
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.55s ease both;
 }
 
 .btn {
@@ -192,61 +242,37 @@ nav ul li a:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
 }
-.btn-primary{
+
+.btn--primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn--primary:hover {
     background: var(--accent-hover);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
 }
-.btn-secondary{
+
+.btn--secondary {
     background: transparent;
     color: var(--accent);
     border: 2px solid var(--accent);
 }
-.btn-secondary:hover{
+
+.btn--secondary:hover {
     background: var(--accent);
     color: white;
-    transform: translateY();
-    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
 }
-.person-bade{
-    display: inline-block;
-    background: var(--border);
-    color: var(--accent);
-    padding: .35px 1rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    font-weight: 600;
-    letter-spacing: 0.5rem;
-    margin-bottom: 1rem;
-    animation: fadeUp 0.6s 0.2s ease both;
-}
+
 .person-img {
   position: relative;
   height: 340px;
   animation: fadeUp 0.6s 0.3s ease both;
 }
-.float-card{
-    position: absolute;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 0.75rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent);
-    box-shadow: var(--card-shadow);
-    animation: float 4s ease-in-out infinite;
-}
-.card--a{
-    top: 10%; left: 5%; animation-delay:0s ;
-}
-.card--b{
-    top: 55%; right: 5%; animation-delay:1s ;
-}
-.card--c{
-    top: 8%; right: 20%; animation-delay:0.7s ;
-}
+
 .avatar {
     position: absolute;
     inset: 50% auto auto 50%;
@@ -262,7 +288,7 @@ nav ul li a:hover {
     /* ✅ ANIMACIÓN: pulso continuo */
     animation: pulse 3s ease-in-out infinite;
 }
- 
+
 .avatar-interior {
     width: 130px;
     height: 130px;
@@ -275,6 +301,49 @@ nav ul li a:hover {
     font-weight: 800;
     color: var(--accent)
 }
+/* ✅ KEYFRAMES: pulso */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 12px var(--accent-light); }
+  50%       { box-shadow: 0 0 0 20px rgba(99,102,241,0.08); }
+}
+
+.float-card {
+    position: absolute;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    box-shadow: var(--card-shadow);
+    animation: float 4s ease-in-out infinite;
+}
+
+.card--a {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.card--b {
+    top: 55%;
+    right: 5%;
+    animation-delay: 1s;
+}
+
+.card--c {
+    bottom: 8%;
+    left: 20%;
+    animation-delay: 0.7s;
+}
+
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 12px var(--accent-light); }
+  50%       { box-shadow: 0 0 0 20px rgba(99,102,241,0.08); }
+}
+
 /* ============================================ */
 /* 6. SECCIÓN HABILIDADES (FLEXBOX wrap)        */
 /* ============================================ */
@@ -309,7 +378,7 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-/*.leguajes {
+/* .leguajes {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -331,53 +400,52 @@ nav ul li a:hover {
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
-}*/
-.skill-grid{
+}
+ */
+
+ .skill-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minimax(220px, 1fr));
-    gap: 2rem;
-   
-}
-.skill-card{
-background: var(--bg-secondary);
-border-radius: 20px;
-padding: 1.5rem;
-text-align: center;
-border: 1px solid var(--border);
-box-shadow: var(--card-shadow);
-transition: var(--transition);
-animation: faceUp 0.6s ease both;
-}
-.skill-card:hover{
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 1.5rem;
+    max-width: 600px;
+    width: 100%;
+     /* Centrado horizontal */
+     margin: 0 auto;
+ }
+
+ .skill-card{
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    animation: faceUP 0.6s ease both;
+ }
+
+.skill-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
 }
+
 .skill-card h3{
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--accent);
     margin-bottom: 0.8rem;
 }
+
 .skill-card li{
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
     padding: 0.25rem 0;
     border-bottom: 1px solid var(--border);
-    list-style-type: none;
-
 }
-.skill--backend h3{ 
-    color: red;
-}
-.skill--frontend h3{
-    color: yellow;
-
-}
-.skill--database{
-    color: green;
-}
-
+.skill--backend h3  { color: #6366f1; }
+.skill--frontend h3 { color: #a855f7; }
+.skill--database h3       { color: #06b6d4; }
 
 /* ============================================ */
 /* 7. SECCIÓN PROYECTOS O CURSOS (FLEXBOX + GRID)        */
@@ -551,7 +619,6 @@ textarea:focus {
     font-size: 0.95rem;
 }
 
-
 /* ============================================ */
 /* 9. FOOTER (FLEXBOX)                          */
 /* ============================================ */
@@ -565,7 +632,7 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-.social-links {
+/*.social-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -582,4 +649,59 @@ footer {
 .social-links a:hover {
     color: var(--accent);
     transform: translateY(-3px);
+}*/
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.social-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  /* ✅ TRANSICIÓN: underline animado */
+  transition: width 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  /* ✅ TRANSFORM: sube el link */
+  transform: translateY(-3px);
+}
+.social-links a:hover::after { width: 100%; }
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
 }

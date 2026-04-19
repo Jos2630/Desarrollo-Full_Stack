@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="css/styles2.css" />
+
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <header>
       <div class="container">
         <div class="navbar">
-          <div class="logo">Josue Chambilla</div>
+          <div class="logo">Josue Javier Chambilla Ticona</div>
           <nav>
             <ul>
               <li><a href="#inicio">Inicio</a></li>
@@ -24,75 +25,62 @@
       <!-- <h1>Bienvenido a mi sitio web</h1>   -->
     </header>
     <main>
-      <section id="inicio">
+      <section id="inicio" aria-label="Presentación">
         <div class="container person">
           <div class="person-content">
-            <span class="person-bade">Disponible para proyectos</span>
-            <h1>Hola, soy Josue</h1>
-            <p>
-              Desarrollador de Software y Analista Programador Universitario
-            </p>
+            <span class="person-badge">Disponible para proyectos</span>
+            <h1>Hola, soy <br> <strong>Josue Chambilla</strong> </h1>
+            <p> Estudiante de informatica en la U.M.S.A.</p>
             <div class="actions">
-                <a href="#contacto" class="btn btn-primary">Contáctame</a>
-                <a href="#servicios" class="btn btn-secondary">Ver proyectos</a>
+              <a href="#servicios" class="btn bnt--primary">Ver proyectos</a>
+              <a href="#contacto" class="btn btn--secondary">Contáctame</a>            
             </div>
-            <aside class="person-image">
-                <div class="float-card card--a">React</div>
-                <div class="float-card card--b">Nodejs</div>
-                <div class="float-card card--c">Python</div>
-                <div class="avatar">
-                    <div class="avatar-interior">JC</div>
-                </div>
+            <aside class="person-img" aria-hidden="true">
+              <div class="float-card card--a">JavaScript</div>
+              <div class="float-card card--b">Java</div>
+              <div class="float-card card--c">Python</div>
+              <div class="avatar">
+                <div class="avatar-interior">JJCT</div>
+              </div>
             </aside>
-          </div>
         </div>
       </section>
       <section id="acercade">
         <div class="container about">
           <h2>Acerca de mí</h2>
           <p>
-            Soy un apasionado desarrollador de software con experiencia en
-            diversas tecnologías y lenguajes de programación. Me especializo en
-            el desarrollo de aplicaciones web y móviles, y siempre estoy
-            buscando aprender nuevas habilidades para mejorar mis proyectos.
+           Apasionado por el desarrollo web y la resolución de problemas a través del código. 
+            Actualmente en formación constante, he aprobado materias como Programación Web, 
+            Fundamentos Digitales y Álgebra, lo que me ha dado una base sólida tanto en lógica 
+            como en tecnologías frontend. Me encanta crear interfaces limpias, funcionales 
+            y con personalidad.
           </p>
-          <div class="skill-grid">
+          <div class="skill-grid" >
             <article class="skill-card skill--backend">
-               <h3>Backend</h3>
-               <ul>
-                    <li>Node js</li>
-                    <li>Php</li>
-                    <li>Pyhton</li>
-                    <li>java</li>
-               </ul>
+              <h3>Backend</h3>
+              <ul>
+                <li>Nodejs (nestjs, express)</li>
+                <li>Python (django)</li>
+                <li>Java (spring)</li>
+              </ul>
             </article>
             <article class="skill-card skill--frontend">
-               <h3>Frontend</h3>
-               <ul>
-                    <li>javascript</li>
-                    <li>react</li>
-                    <li>angular</li>
-                    <li>vue</li>
-               </ul>
+              <h3>Frontend</h3>
+              <ul>
+                <li>JavaScript/typescript</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue</li>                
+              </ul>
             </article>
             <article class="skill-card skill--database">
-               <h3>Base de datos</h3>
-               <ul>
-                    <li>mysql</li>
-                    <li>postesql</li>
-                    <li>Mongodb</li>
-               </ul>
+              <h3>Base de Datos</h3>
+              <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+              </ul>
             </article>
-
-          </div>
-          <div class="leguajes">
-            <div class="item-l">Nodejs (nestjs, express)</div>
-            <div class="item-l">Php (laravel)</div>
-            <div class="item-l">Python (django)</div>
-            <div class="item-l">Java (spring)</div>
-            <div class="item-l">JavaScript/typescript (react, angular)</div>
-            <div class="item-l">Base de datos (mysql, postgresql, mongodb)</div>
-          </div>
+          </div>          
         </div>
       </section>
       <section id="servicios">
@@ -129,37 +117,26 @@
                 </div>
               </div>
             </article>
+            <article class="project-card">
+              <div class="project-img">📊</div>
+              <div class="project-info">
+                <h3>Dashboard AnalyTics</h3>
+                <p>
+                  Panel de control con graficas en tiepo real
+                </p>
+                <div>
+                  <span class="tech-badge">HTML5 semántico</span>
+                  <span class="tech-badge">CSS Grid</span>
+                  <span class="tech-badge">JavaScript</span>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
       <section id="contacto">
-           <div class="container contact">
-          <h2 class="section-title">Cantactenos</h2>
-          <div class="contacto-info">
-            <div class="contacto-item">
-              <span class="contacto-icon">📧</span>
-              <div>
-                <strong>Email</strong>
-                <p>tuemail@ejemplo.com</p>
-              </div>
-            </div>
-            <div class="contacto-item">
-              <span class="contacto-icon">📍</span>
-              <div>
-                <strong>Direccion</strong>
-                <p>Calle Bugambilla nro 303, Zona Obrajes, La Paz, Bolivia</p>
-              </div>
-            </div>
-            <div class="contacto-item">
-              <span class="contacto-icon">📞</span>
-              <div>
-                <strong>Respuesta</strong>
-                <p>Menos de 48 horas</p>
-              </div>
-            </div>
-
-          </div>
-        <div class="contact-form">
+        
+          <div class="contact-form">
             <form action="#" method="post">
               <div class="form-group">
                 <label for="nombre">Nombre completo</label>
@@ -226,17 +203,45 @@
             <p >* Recibirás respuesta en menos de 48h.</p>
           </div>
         </div>
+
+        <div class="container contact">
+          <h2 class="section-title">Contactenos</h2>
+          <div class="contacto-info">
+            <div class="contacto-item">
+              <span class="contacto-icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <p>tuemail@ejemplo.com</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📍</span>
+              <div>
+                <strong>Direccion</strong>
+                <p>El Alto, Bolivia</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📞</span>
+              <div>
+                <strong>Respuesta</strong>
+                <p>Menos de 48 horas</p>
+              </div>
+            </div>
+
+          </div>
       </section>
     </main>
     <footer>
-      <div class="container">
-        <div class="social-links">
-          <a href="https://github.com/hebertcussi" target="_blank">Github</a>
-          <a href="https://www.linkedin.com/in/hebertcussi" target="_blank">LinkedIn</a>
-          <a href="https://www.facebook.com/hebertcussi" target="_blank">Facebook</a>
-        </div>
+      <div class="container footer-grid">
+       
+        <nav class="social-links">
+          <a href="#" target="_blank">Github</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">Facebook</a>
+        </nav>
       </div>
-      <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+      <p class="footer-copy">&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>
