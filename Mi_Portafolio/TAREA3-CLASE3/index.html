@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">Josue Javier Chambilla Ticona</div>
+          <nav>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#acercade">Acerca de</a></li>
+              <li><a href="#servicios">Mis Proyectos</a></li>
+              <li><a href="#apis">Apis</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- <h1>Bienvenido a mi sitio web</h1>   -->
+    </header>
+    <main>
+      <section id="inicio" aria-label="Presentación">
+        <div class="container person">
+          <div class="person-content">
+            <span class="person-badge">Disponible para proyectos</span>
+            <h1>Hola, soy <br> <strong>Josue Chambilla</strong> </h1>
+            <p> Estudiante de informatica en la U.M.S.A.</p>
+            <div class="actions">
+              <a href="#servicios" class="btn bnt--primary">Ver proyectos</a>
+              <a href="#contacto" class="btn btn--secondary">Contáctame</a>            
+            </div>
+            <aside class="person-img" aria-hidden="true">
+              <div class="float-card card--a">JavaScript</div>
+              <div class="float-card card--b">Java</div>
+              <div class="float-card card--c">Python</div>
+              <div class="avatar">
+                <div class="avatar-interior">JJCT</div>
+              </div>
+            </aside>
+        </div>
+      </section>
+      <section id="acercade">
+        <div class="container about">
+          <h2>Acerca de mí</h2>
+          <p>
+           Apasionado por el desarrollo web y la resolución de problemas a través del código. 
+            Actualmente en formación constante, he aprobado materias como Programación Web, 
+            Fundamentos Digitales y Álgebra, lo que me ha dado una base sólida tanto en lógica 
+            como en tecnologías frontend. Me encanta crear interfaces limpias, funcionales 
+            y con personalidad.
+          </p>
+          <div class="skill-grid" >
+            <article class="skill-card skill--backend">
+              <h3>Backend</h3>
+              <ul>
+                <li>Nodejs (nestjs, express)</li>
+                <li>Python (django)</li>
+                <li>Java (spring)</li>
+              </ul>
+            </article>
+            <article class="skill-card skill--frontend">
+              <h3>Frontend</h3>
+              <ul>
+                <li>JavaScript/typescript</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue</li>                
+              </ul>
+            </article>
+            <article class="skill-card skill--database">
+              <h3>Base de Datos</h3>
+              <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </article>
+          </div>          
+        </div>
+      </section>
+      <section id="servicios">
+        <div class="container">
+          <h2>Mis proyectos implementados</h2>
+          <div class="filter-bar" role="group" aria-label="Filtros de proyectos">
+              <button class="filter-btn" data-filter="all">Todos</button>
+              <button class="filter-btn" data-filter="frontend">Frontend</button>
+              <button class="filter-btn" data-filter="backend">Backend</button>
+              <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+          <p  class="projects-meta"><span id="project-count"></span></p>
+          <div class="projects-grid" id="projects-grid">
+          
+          </div>
+        </div>
+      </section>
+
+      <section id="apis" aria-label="Consumo de APIs públicas">
+        <div class="container">
+          <header class="section-header">
+            <h2>APIs Públicas en Vivo</h2>
+            <p>Ejemplos reales de Fetch API, <code>async/await</code> y <code>Promise.all</code>.</p>
+          </header>
+ 
+          <div class="apis-grid">
+ 
+          <!-- ✅ Sesión 4: PokeAPI – 6 peticiones en paralelo con Promise.all -->
+            <div class="api-panel" id="poke-section">
+              <div class="api-panel__header">
+                <span class="api-badge">PokeAPI</span>
+                <h3>Pokémon con <code>Promise.all()</code></h3>
+                <p>Carga 6 Pokémon <strong>en paralelo</strong>. Cada tarjeta es una promesa independiente.</p>
+              </div>
+              <div id="poke-grid" class="poke-grid"></div>
+                <button id="poke-next" class="btn btn--outline btn--sm">Cargar siguientes →</button>
+              </div>
+ 
+              <!-- ✅ Sesión 4: REST Countries – Fetch GET + destructuring de respuesta -->
+              <div class="api-panel">
+                <div class="api-panel__header">
+                  <span class="api-badge">REST Countries</span>
+                  <h3>Buscar país</h3>
+                  <p>Fetch GET con <strong>async/await</strong> y <strong>destructuring</strong> del objeto JSON.</p>
+                </div>
+                <div class="country-search-box">
+                  <input
+                    type="search"
+                    id="country-search"
+                    placeholder="Escribe un país… ej: Bolivia"
+                    aria-label="Buscar país"
+                  />
+                </div>
+                <div id="country-result" class="country-result"></div>
+              </div>
+ 
+          </div>
+</div>
+</section>
+      <section id="contacto">
+        
+          <div class="contact-form">
+            <form action="#" method="post">
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="tú@ejemplo.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="presupuesto">Presupuestos Estimado:</label>
+                <span class="rango-valor" id="rango-valor">$1,000 - $5,000</span>
+                <input
+                  type="range"
+                  id="presupuesto"
+                  name="presupuesto"
+                  min="1000"
+                  max="5000"
+                  step="500"
+                  value="3000"
+                />
+              </div>
+              <div class="form-group">
+                  <label for="servicio">Tipo de servicio</label>
+                  <input
+                    type="search"
+                    id="servicio"
+                    name="servicio"
+                    list="servicios-list"
+                    placeholder="Busca un servicio..."
+                  />
+                  <datalist id="servicios-list">
+                    <option value="Desarrollo Web Full Stack">
+                    <option value="API REST / Back-End">
+                    <option value="Diseño UI / Front-End">
+                    <option value="Base de Datos">
+                    <option value="Consultoría Técnica">
+                  </datalist>
+                </div>
+              <div class="form-group">
+                  <label for="mensaje">Mensaje</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  required
+                  placeholder="Cuéntame sobre tu proyecto..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Enviar mensaje →</button>
+            </form>
+            <p >* Recibirás respuesta en menos de 48h.</p>
+          </div>
+        </div>
+
+        <div class="container contact">
+          <h2 class="section-title">Contactenos</h2>
+          <div class="contacto-info">
+            <div class="contacto-item">
+              <span class="contacto-icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <p>tuemail@ejemplo.com</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📍</span>
+              <div>
+                <strong>Direccion</strong>
+                <p>El Alto, Bolivia</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📞</span>
+              <div>
+                <strong>Respuesta</strong>
+                <p>Menos de 48 horas</p>
+              </div>
+            </div>
+
+          </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-grid">
+       
+        <nav class="social-links">
+          <a href="#" target="_blank">Github</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">Facebook</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      // Actualizar valor del range en tiempo real
+      const range = document.getElementById('presupuesto');
+      const val   = document.getElementById('rango-valor');
+      if (range && val) {
+        range.addEventListener('input', () => {
+          val.textContent = '$' + Number(range.value).toLocaleString();
+        });
+      }
+    </script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
